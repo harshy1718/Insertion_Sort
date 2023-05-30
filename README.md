@@ -21,3 +21,33 @@ Insertion Sort is particularly useful when:
 
 # Function Description 
 
+Here we declare a function named insertionsort which is a void type so it makes changes in array only and does not return any value. this function just reassembles the array in the sorted way. Like it picks a element and compares it with the elements that come before it in the array and places it according to the order
+
+    void insertionsort (int array[], int size) {
+        for (int i = 1; i < size ; i++) {
+            int key = array[i];
+            int j = i-1;
+            while ((j >= 0) && (array[j] > key)) {
+                    array[j+1] = array[j];
+                j--;
+            }
+            array[j+1] = key;
+        }
+    }
+
+In this we only declare an array and take its input and then print the sorted array
+
+    int main () {
+        int array[100];
+        int n;
+        cout << "Enter the size of the array : ";
+        cin >> n;
+        cout << "Enter the elements of the array : ";
+        for (int i = 0; i < n; i++) {
+            cin >> array[i];
+        }
+        insertionsort(array,n);
+        for (int i = 0; i < n; i++) {
+            cout << array[i] << " ";
+        }
+    }
